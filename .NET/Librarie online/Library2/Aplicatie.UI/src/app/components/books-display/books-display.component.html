@@ -1,0 +1,24 @@
+<body>
+  <h1>Răsfoiți libraria noastră:</h1>
+  <div class="cont">
+    <div class="list-group" *ngFor="let bd of service.list">
+      <ul [routerLink]="['/book-page', bd.name]" class="bottom-list">
+        <li>
+          <img
+            [routerLink]="['/book-page', bd.name]"
+            [src]="bd.picture_Url"
+            width="70"
+            height="100"
+            class="imag"
+          />
+        </li>
+
+        <li class="fw-bold">
+          {{ bd.name }}
+        </li>
+        <li class="fw-bold">{{ bd.author }}</li>
+        <li class="fw-bold">{{ bd.description }}</li>
+      </ul>
+    </div>
+  </div>
+</body>

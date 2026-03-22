@@ -1,0 +1,127 @@
+
+<nav class="navbar">
+  <div class="top-group">
+    <a class="left-msg">Bun venit la magazinul de produse electrice</a>
+    <ul class="top-list">
+      <li>Locație magazin</li>
+      <li>Urmareste Comanda</li>
+      <li>Magazin</li>
+      <li class="login">
+                @if(service.isLoggedIn()){
+                <a routerLink="/myAccount">My Account</a>
+                } @else {
+                  <a routerLink="/login">Log In</a>
+                }
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="bottom-group">
+<!--    <div class="menu-button" (click)="onClick()">-->
+<!--      <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">-->
+<!--        <path fill="currentColor" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>-->
+<!--      </svg>-->
+<!--    </div>-->
+
+    <div class="home-button">
+      <a class="home-ref" routerLink="/home">
+        <img src="https://xelectric.ro/wp-content/uploads/2021/05/0a0eaf5c73a6433aa2614b571bac6900-4-e1620243070139.png">
+      </a>
+    </div>
+
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Cauta produse"
+        class="search-input"
+      />
+
+      <select [(ngModel)]="selectedCategory" class="category-select">
+        <option value="">Toate categoriile</option>
+
+        @for (category of menuCategories; track category.type) {
+          <option [ngValue]="category.type">
+            {{ category.type }}
+          </option>
+        }
+
+      </select>
+      <button class="search-btn" (click)="search()">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="22" viewBox="0 0 50 50">
+          <path d="M 21 3 C 11.622998 3 4 10.623005 4 20 C 4 29.376995 11.622998 37 21 37 C 24.712383 37 28.139151 35.791079 30.9375 33.765625 L 44.085938 46.914062 L 46.914062 44.085938 L 33.886719 31.058594 C 36.443536 28.083 38 24.223631 38 20 C 38 10.623005 30.377002 3 21 3 z M 21 5 C 29.296122 5 36 11.703883 36 20 C 36 28.296117 29.296122 35 21 35 C 12.703878 35 6 28.296117 6 20 C 6 11.703883 12.703878 5 21 5 z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="compare">
+      <button class="icon-btn"
+              mat-icon-button
+              matTooltip="Compare"
+              matTooltipPosition="below"
+              [matBadge]="3"
+              matBadgeColor="warn"
+              matBadgePosition="below after"
+              >
+
+        <mat-icon>compare_arrows</mat-icon>
+
+      </button>
+    </div>
+
+    <div  class="favourites">
+      <button class="icon-btn"
+              mat-icon-button
+              [matBadge]="3"
+              matBadgeColor="warn"
+              matBadgePosition="below after"
+              matBadgeSize="medium"
+              matTooltip="Favorites"
+              matTooltipPosition="below"
+              matBadgeOverlap="true">
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </div>
+
+    <div class="cart" routerLink="/shoppingCart">
+      <button class="icon-btn"
+              mat-icon-button
+              [matBadge]="3"
+              matBadgeColor="warn"
+              matBadgePosition="below after"
+              matBadgeSize="large"
+              matTooltip="Cart"
+              matTooltipPosition="below">
+
+        <mat-icon>shopping_cart</mat-icon>
+
+      </button>
+    </div>
+
+
+
+    <!--    <div [ngClass]="{'nav-list': true, 'show': isClicked}" class="nav-list" (click)="onClick()">-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--  <div class="right-group">-->
+<!--    <div class="currency">-->
+<!--      <select id="currency" (change)="changeCurrency($event)">-->
+<!--        <option value="RON">RON</option>-->
+<!--        <option value="EUR">EUR</option>-->
+<!--        <option value="USD">USD</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    <div class="login">-->
+<!--      @if(service.isLoggedIn()){-->
+<!--      <a routerLink="/myAccount">My Account</a>-->
+<!--      } @else {-->
+<!--        <a routerLink="/login">Log In</a>-->
+<!--      }-->
+<!--    </div>-->
+  </div>
+</nav>

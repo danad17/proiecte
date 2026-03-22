@@ -1,0 +1,50 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body *ngIf="user">
+  <div class="card">
+    <div class="left-container">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+        alt="Profile Image"
+      />
+      <h2>{{ user.lastName }} {{ user.firstName }}</h2>
+      <p>Role: {{ user.role }}</p>
+    </div>
+    <div class="right-container">
+      <h3 class="details">Profile Details</h3>
+      <table>
+        <tr>
+          <td>UserId :</td>
+          <td>{{ user.userId }}</td>
+        </tr>
+        <tr>
+          <td>UserName :</td>
+          <td>{{ user.userName }}</td>
+        </tr>
+        <tr>
+          <td>First Name :</td>
+          <td>{{ user.firstName }}</td>
+        </tr>
+        <tr>
+          <td>Last Name :</td>
+          <td>{{ user.lastName }}</td>
+        </tr>
+        <tr>
+          <td>Email :</td>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <td>Join Date :</td>
+          <td>{{ user.createdDate | date }}</td>
+        </tr>
+        <button class="logout" routerLink="/login">Log Out</button>
+      </table>
+      <div class="credit">
+        <a href="https://www.learningrobo.com/"> </a>
+      </div>
+    </div>
+  </div>
+</body>

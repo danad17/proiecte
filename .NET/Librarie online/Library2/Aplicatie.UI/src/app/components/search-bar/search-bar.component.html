@@ -1,0 +1,26 @@
+<div class="content" role="main">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="search-text"
+      aria-describedby="search-text"
+      [(ngModel)]="searchText"
+      (input)="onSearchTextChanged()"
+      placeholder="Enter book name to search"
+      autofocus
+    />
+
+    <div class="overlay" *ngIf="filteredBooks.length > 0">
+      <ul class="list-group list-group-flush">
+        <li
+          class="list-group-item"
+          *ngFor="let book of filteredBooks"
+          [routerLink]="['/book-page', book.name]"
+        >
+          {{ book.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

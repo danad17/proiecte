@@ -1,0 +1,22 @@
+.background-container {
+  background-image: url(https://wallpapercave.com/wp/wp7490233.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  color: white;
+}
+
+.wlc {
+  text-align: center;
+  font-size: 44px;
+  margin-top: 20%;
+  background-color: rgba(53, 47, 47, 0.262);
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.589);
+}
+.bar {
+  margin: 0px 38%;
+}

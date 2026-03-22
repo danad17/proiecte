@@ -1,0 +1,72 @@
+html {
+  background-color: green;
+}
+.imag {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+h1,
+h3,
+h4 {
+  text-align: center;
+}
+.page-container {
+  width: 90%;
+  height: 2000px;
+  border-radius: 100px;
+  background-color: rgba(244, 165, 96, 0.563);
+  border: 10px solid sandybrown;
+  padding-top: 60px;
+  text-align: center;
+  margin-left: 80px;
+  transform: translateY(100px);
+}
+
+.fw-bold-author,
+.fw-bold-title {
+  text-shadow: 1px 3px #00000049;
+  font-size: 24px;
+}
+
+.desc {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 144px;
+  margin-bottom: 64px;
+  margin-top: 24px;
+  border-left: 5px solid sandybrown;
+  border-right: 5px solid sandybrown;
+  border-radius: 20px;
+  padding: 0 12px;
+}
+.descriptor {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 44px;
+}
+
+.embedded-page {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  top: 50%;
+  left: 50%;
+  transform: translate(35%, 0%); /* Center vertically and horizontally */
+  width: 60%;
+  height: 60%;
+  border: 2px solid #52290e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.embedded-page iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

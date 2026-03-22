@@ -1,0 +1,246 @@
+<div class="main-content">
+
+  <!-- Dropdown meniul -->
+  <div class="dropdown" (mouseleave)="toggleHover(null)">
+    <button class="dropdown-toggle" (click)="toggleMenu()">☰ Produse</button>
+
+    <div class="dropdown-menu" *ngIf="isOpen">
+      <!-- Coloana categorii -->
+      <ul class="menu-categories">
+        <li class="category-wrapper" (click)="goToAllProducts()">
+          <div class="category">Toate categoriile</div>
+        </li>
+        <li *ngFor="let cat of menuCategories" class="category-wrapper" (mouseenter)="toggleHover(cat)">
+          <div class="category" (click)="selectCategoryRouter(cat)">{{ cat.type }}</div>
+        </li>
+      </ul>
+
+      <!-- Coloana subtipuri -->
+      <ul class="items-list" [class.visible]="hoveredCategory">
+        <li class="sub-item" *ngFor="let sub of hoveredCategory?.subtypes">
+          {{ sub.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slider-wrapper" (mouseenter)="stopAutoPlay()" (mouseleave)="startAutoPlay()">
+
+    <!-- Slides -->
+    <div #slide class="slide" *ngFor="let s of slides; let i = index">
+      <div class="slide-content">
+        <img
+          [src]="s.image"
+          width="1280"
+          height="744"
+          alt="Slide">
+      </div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="indicators">
+    <span *ngFor="let s of slides; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)"></span>
+    </div>
+  </div>
+
+  <div class="category-panel">
+    <div class="category-panel-item">
+      <img src="https://xelectric.ro/wp-content/uploads/2021/04/IMG_20180601_141319-1024x768-1.jpg">
+      <div class="text">
+      <p>PRINDE <strong>REDUCERILE</strong> LA AUTOMATIZARI</p>
+      <span><strong>Cumpara</strong><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 68.541 46.209 L 50.175 64.575 c -0.668 0.668 -1.75 0.668 -2.418 0 l -6.055 -6.055 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 5.111 -5.11 H 22.668 c -0.944 0 -1.71 -0.766 -1.71 -1.71 v -8.563 c 0 -0.944 0.766 -1.71 1.71 -1.71 h 24.145 l -5.111 -5.111 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 6.055 -6.055 c 0.668 -0.668 1.751 -0.668 2.418 0 l 18.366 18.366 C 69.209 44.459 69.209 45.542 68.541 46.209 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(91,160,208); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg></span>
+      </div>
+    </div>
+    <div class="category-panel-item">
+      <img src="https://xelectric.ro/wp-content/uploads/2021/04/SAM_1434-1024x683-1.jpg">
+      <div class="text">
+      <p>PORNIRI <strong>MOTOARE</strong></p>
+      <span> <strong>Cumpara</strong> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 68.541 46.209 L 50.175 64.575 c -0.668 0.668 -1.75 0.668 -2.418 0 l -6.055 -6.055 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 5.111 -5.11 H 22.668 c -0.944 0 -1.71 -0.766 -1.71 -1.71 v -8.563 c 0 -0.944 0.766 -1.71 1.71 -1.71 h 24.145 l -5.111 -5.111 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 6.055 -6.055 c 0.668 -0.668 1.751 -0.668 2.418 0 l 18.366 18.366 C 69.209 44.459 69.209 45.542 68.541 46.209 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(91,160,208); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg></span>
+      </div>
+    </div>
+    <div class="category-panel-item">
+      <img src="https://xelectric.ro/wp-content/uploads/2021/04/SAM_1790-1024x576-1.jpg">
+      <div class="text">
+      <p>AUTOMATIZARI <strong>POMPE</strong></p>
+      <span><strong>Cumpara</strong> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 68.541 46.209 L 50.175 64.575 c -0.668 0.668 -1.75 0.668 -2.418 0 l -6.055 -6.055 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 5.111 -5.11 H 22.668 c -0.944 0 -1.71 -0.766 -1.71 -1.71 v -8.563 c 0 -0.944 0.766 -1.71 1.71 -1.71 h 24.145 l -5.111 -5.111 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 6.055 -6.055 c 0.668 -0.668 1.751 -0.668 2.418 0 l 18.366 18.366 C 69.209 44.459 69.209 45.542 68.541 46.209 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(91,160,208); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg></span>
+      </div>
+    </div>
+    <div class="category-panel-item">
+      <img src="https://i0.wp.com/xelectric.ro/wp-content/uploads/2022/04/UntitledVA-scaled.jpg?resize=300%2C300&ssl=1">
+      <div class="text">
+      <p>COMPENSATOARE <strong>ENERGIE</strong> REACTIVA</p>
+      <span><strong>Cumpara</strong> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 68.541 46.209 L 50.175 64.575 c -0.668 0.668 -1.75 0.668 -2.418 0 l -6.055 -6.055 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 5.111 -5.11 H 22.668 c -0.944 0 -1.71 -0.766 -1.71 -1.71 v -8.563 c 0 -0.944 0.766 -1.71 1.71 -1.71 h 24.145 l -5.111 -5.111 c -0.668 -0.668 -0.668 -1.751 0 -2.418 l 6.055 -6.055 c 0.668 -0.668 1.751 -0.668 2.418 0 l 18.366 18.366 C 69.209 44.459 69.209 45.542 68.541 46.209 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(91,160,208); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="products-section">
+
+    <!-- OFERTA SPECIALA STANGA -->
+    <div class="special-offer">
+      <div class="badge">Save 485.00 lei</div>
+
+      <h3>Oferta speciala</h3>
+
+      <img src="https://i0.wp.com/xelectric.ro/wp-content/uploads/2022/04/UntitledVA-scaled.jpg?resize=300%2C300&ssl=1">
+
+      <p class="offer-title">
+        AAR 95A/45kW – Anclansarea automata a rezervei
+      </p>
+
+      <div class="price">
+        <span class="new-price">4,455.00 lei</span>
+        <span class="old-price">4,940.00 lei</span>
+      </div>
+    </div>
+
+
+    <!-- DREAPTA -->
+    <div class="products-content">
+
+      <!-- Tabs -->
+      <div class="tabs-bar">
+        <button class="tabs-btn"
+                (click)="selectedTab = 'ProduseRecomandate'"
+                [class.active]="selectedTab === 'ProduseRecomandate'">
+          Produse recomandate
+        </button>
+
+        <button class="tabs-btn"
+                (click)="selectedTab = 'ProduseLaReducere'"
+                [class.active]="selectedTab === 'ProduseLaReducere'">
+          Produse la reducere
+        </button>
+
+        <button class="tabs-btn"
+                (click)="selectedTab = 'ProduseCuRatingRidicat'"
+                [class.active]="selectedTab === 'ProduseCuRatingRidicat'">
+          Produse cu rating ridicat
+        </button>
+      </div>
+
+
+      <!-- GRID PRODUSE -->
+      <div class="products-grid">
+
+        <div class="product-card" *ngFor="let item of items">
+
+          <div class="product-card__img-wrap">
+            <img [src]="item.image" [alt]="item.name" class="product-card__img">
+            @if (item.stockAvailable === 0) {
+              <span class="product-card__badge product-card__badge--out">Epuizat</span>
+            }
+          </div>
+
+          <div class="product-card__body">
+            <h4 class="product-card__name">{{ item.name }}</h4>
+            <p class="product-card__price">{{ item.price | number:'1.2-2' }} lei</p>
+
+            <button
+              class="product-card__cart-btn"
+              [class.product-card__cart-btn--added]="justAdded[item.id!]"
+              [disabled]="item.stockAvailable === 0 || adding[item.id!]"
+              (click)="addToCart(item)">
+              @if (!justAdded[item.id!]) {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+                Adaugă în coș
+              } @else {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Adăugat!
+              }
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!--  <div class="tabs-bar">-->
+
+<!--    <div class="special-offer-itm">-->
+<!--      <img src="https://i0.wp.com/xelectric.ro/wp-content/uploads/2022/04/UntitledVA-scaled.jpg?resize=300%2C300&ssl=1">-->
+<!--    </div>-->
+
+<!--    <div class="right-side">-->
+<!--      <button class="tabs-btn"-->
+<!--              (click)="selectedTab = 'ProduseRecomandate'"-->
+<!--              [class.active]="selectedTab === 'ProduseRecomandate'">-->
+<!--        Produse Recomandate-->
+<!--      </button>-->
+
+<!--      <button class="tabs-btn"-->
+<!--              (click)="selectedTab = 'ProduseLaReducere'"-->
+<!--              [class.active]="selectedTab === 'ProduseLaReducere'">-->
+<!--        Produse La Reducere-->
+<!--      </button>-->
+
+<!--      <button class="tabs-btn"-->
+<!--              (click)="selectedTab = 'ProduseCuRatingRidicat'"-->
+<!--              [class.active]="selectedTab === 'ProduseCuRatingRidicat'">-->
+<!--        Produse Cu Rating Ridicat-->
+<!--      </button>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--      <div *ngIf="selectedTab === 'ProduseRecomandate'">-->
+<!--        prod rec-->
+<!--      </div>-->
+<!--  <div *ngIf="selectedTab === 'ProduseLaReducere'">-->
+<!--    prod reducere-->
+<!--  </div>-->
+<!--  <div *ngIf="selectedTab === 'ProduseCuRatingRidicat'">-->
+<!--    prod rating-->
+<!--  </div>-->
+
+
+  <!--<div class="item-list">-->
+<!--  @for(item of items; track item.id){-->
+<!--    <div>Nume: {{item.name}}</div>-->
+<!--    <div>Pret: {{item.price}}</div>-->
+<!--    <div>Tip: {{item.type}}</div>-->
+<!--    <div>Subtip: {{item.subtype}}</div>-->
+<!--    <div>Descriere: {{item.description}}</div>-->
+<!--    <div>In stoc: {{item.stockAvailable}}</div>-->
+<!--    <div><img src="{{item.image}}"></div>-->
+<!--  }-->
+<!--</div>-->
+  <div class="cart-toast" [class.cart-toast--visible]="toastVisible">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    Produs adăugat în coș!
+  </div>
+
+</div>

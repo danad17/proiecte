@@ -1,0 +1,13 @@
+<body>
+  <div class="cont">
+    <div class="list-group" *ngFor="let bd of service.list">
+      <ul class="bottom-list">
+        <li class="fw-bold" [routerLink]="['/book-page', bd.name]">
+          {{ bd.name }}
+        </li>
+        <li class="fw-bold">{{ bd.author }}</li>
+        <li class="fw-bold">{{ bd.description }}</li>
+      </ul>
+    </div>
+  </div>
+</body>

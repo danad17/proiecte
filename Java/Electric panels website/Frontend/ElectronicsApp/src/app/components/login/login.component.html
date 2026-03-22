@@ -1,0 +1,69 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <a class="home" [routerLink]="['/home']" title="Home">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <h2>{{ isLogin ? 'Login' : 'Register' }}</h2>
+
+    @if (isLogin) {
+      <div>
+        <input type="text" [(ngModel)]="email" placeholder="Email" />
+        <input type="password" [(ngModel)]="password" placeholder="Password" />
+        <button (click)="submit()">Login</button>
+
+        @if (errorMessage) {
+          <div class="error">{{ errorMessage }}</div>
+        }
+
+        <p class="switch-link">
+          No Account?
+          <a href="javascript:void(0)" (click)="toggleForm()">Register Here!</a>
+        </p>
+
+        <p class="switch-link">
+          <a href="javascript:void(0)" (click)="forgotPassword()">Forgot My Password!</a>
+        </p>
+      </div>
+    }
+
+    @if (!isLogin) {
+      <div>
+        <input type="text" [(ngModel)]="email" placeholder="Email" />
+        <input type="password" [(ngModel)]="password" placeholder="Password" />
+        <input type="text" [(ngModel)]="firstName" placeholder="First Name" />
+        <input type="text" [(ngModel)]="lastName" placeholder="Last Name" />
+        <input type="text" [(ngModel)]="phone" placeholder="Phone Number" />
+
+        <button (click)="submit()">Register</button>
+
+        <p class="switch-link">
+          Already have an account?
+          <a href="javascript:void(0)" (click)="toggleForm()">Log In here!</a>
+        </p>
+
+        @if (isVerificationStep) {
+          <div class="verification-step">
+            <h3>Verify Email</h3>
+
+            <input
+              id="code"
+              type="text"
+              [(ngModel)]="verificationCode"
+              name="code"
+              placeholder="Verification Code"
+              required
+            />
+
+            <button (click)="verifyCode()">Verify Code!</button>
+            <button (click)="resendCode()">Resend Code!</button>
+
+            @if (errorMessage) {
+              <div class="error">{{ errorMessage }}</div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.content {
+  position: relative;
+}
+
+.card {
+  position: relative;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #ffffff8f;
+  background-clip: padding-box;
+  border: 1px solid #6d6d6d;
+  border-radius: 30px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #ffffff8f;
+  border-color: #ffb980;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(238, 167, 61, 0.25);
+  border-radius: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 460px;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #f0f0f0;
+}

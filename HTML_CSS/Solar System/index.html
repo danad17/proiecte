@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>The Space</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <section class="showcase active">
+      <header>
+        <h1 class="logo">Explore The Space</h1>
+        <div class="toggle active"></div>
+      </header>
+      <video autoplay muted loop src="rearth.mp4"></video>
+      <div class="overlay"></div>
+      <div class="text">
+        <div class="h2">
+          <h2>Get to know your universe!</h2>
+          <h2>Discover!</h2>
+          <h2>Learn!</h2>
+        </div>
+        <a href="about.html" class="about">About></a>
+        <a href="news.html" class="about">News></a>
+      </div>
+
+      <ul class="social">
+        <li>
+          <a href="#"
+            ><img src="images/facebook3.png" height="35px" alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="images/instagram.png" height="40px" alt=""
+          /></a>
+        </li>
+      </ul>
+    </section>
+    <div class="menu">
+      <ul>
+        <li class="animated-text sun"><a href="Sun.html">Sun></a></li>
+        <br />
+        <li class="animated-text mercury">
+          <a href="Mercury.html">Mercury></a>
+        </li>
+        <br />
+        <li class="animated-text earth"><a href="Earth.html">Earth></a></li>
+        <br />
+        <li class="animated-text mars"><a href="Mars.html">Mars></a></li>
+        <br />
+        <li class="animated-text jupiter">
+          <a href="Jupiter.html">Jupiter></a>
+        </li>
+        <br />
+        <li class="animated-text saturn"><a href="Saturn.html">Saturn></a></li>
+        <br />
+        <li class="animated-text uranus"><a href="Uranus.html">Uranus></a></li>
+        <br />
+        <li class="animated-text neptune">
+          <a href="Neptune.html">Neptune></a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector(".toggle");
+      const showcase = document.querySelector(".showcase");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        showcase.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".menu a").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          // Oprire comportament implicit al linkului (oprește navigarea normală)
+          event.preventDefault();
+
+          // Obține adresa din atributul "href" al linkului
+          let destination = link.getAttribute("href");
+
+          // Verifică dacă deja ești pe aceeași pagină
+          if (window.location.href !== destination) {
+            // Redirecționează către pagina destinată
+            window.location.href = destination;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

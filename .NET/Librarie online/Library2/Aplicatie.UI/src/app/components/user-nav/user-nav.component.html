@@ -1,0 +1,32 @@
+<nav>
+  <ul>
+    <li class="h" routerLink="/home">Home</li>
+    <li class="b" routerLink="/books">Books</li>
+    <li class="s" *ngIf="role === 'Admin'" routerLink="/suggested-books">
+      Suggestions
+    </li>
+    <li class="s" *ngIf="role !== 'Admin'" routerLink="/suggest-book">
+      Suggest Book
+    </li>
+    <li class="acc">
+      <div class="ma" routerLink="/my-account">My Account</div>
+      <svg
+        routerLink="/login"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="logout"
+        name="logout"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+        />
+      </svg>
+      <img class="icon" src="https://www.svgrepo.com/show/479504/book-4.svg" />
+    </li>
+  </ul>
+</nav>

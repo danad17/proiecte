@@ -1,0 +1,149 @@
+<div class="main-content">
+
+
+<!-- Loading state -->
+<div class="cart-loading" *ngIf="isLoading">
+  <div class="spinner"></div>
+  <p>Se încarcă coșul...</p>
+</div>
+
+<!-- Error state -->
+<div class="cart-error" *ngIf="!isLoading && errorMessage">
+  <span class="cart-error__icon">⚠️</span>
+  <p>{{ errorMessage }}</p>
+  <button class="btn btn--primary" (click)="goToShop()">Înapoi la magazine</button>
+</div>
+
+<!-- Coș gol -->
+<div class="cart-empty" *ngIf="!isLoading && !errorMessage && isEmpty">
+  <div class="cart-empty__icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="9" cy="21" r="1"/>
+      <circle cx="20" cy="21" r="1"/>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+  </div>
+  <h2 class="cart-empty__title">Coșul tău este gol</h2>
+  <p class="cart-empty__subtitle">Adaugă produse din magazin pentru a continua.</p>
+  <button class="btn btn--primary" (click)="goToShop()">Mergi la magazine</button>
+</div>
+
+<!-- Coș cu produse -->
+<div class="cart-page" *ngIf="!isLoading && !errorMessage && !isEmpty && cart">
+
+  <div class="cart-page__header">
+    <button class="back-btn" (click)="goToShop()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Continuă cumpărăturile
+    </button>
+    <h1 class="cart-page__title">
+      Coșul meu
+      <span class="cart-page__count">({{ cart.totalItemCount }} {{ cart.totalItemCount === 1 ? 'produs' : 'produse' }})</span>
+    </h1>
+  </div>
+
+  <div class="cart-layout">
+
+    <!-- ── Coloana stânga: lista produse ── -->
+    <div class="cart-items">
+
+      <div class="cart-item" *ngFor="let item of cart.items">
+
+        <div class="cart-item__img-wrap">
+          <img [src]="item.image" [alt]="item.name" class="cart-item__img">
+        </div>
+
+        <div class="cart-item__details">
+          <span class="cart-item__brand">{{ item.brand }}</span>
+          <h3 class="cart-item__name">{{ item.name }}</h3>
+          <div class="cart-item__tags">
+            <span class="tag">{{ item.category }}</span>
+            <span class="tag">{{ item.type }}</span>
+            <span class="tag" *ngIf="item.subtype">{{ item.subtype }}</span>
+          </div>
+          <span class="cart-item__unit-price">{{ item.price | number:'1.2-2' }} lei / buc</span>
+        </div>
+
+        <div class="cart-item__controls">
+
+          <!-- Cantitate -->
+          <div class="qty">
+            <button
+              class="qty__btn"
+              [disabled]="item.quantity <= 1"
+              (click)="decreaseQty(item)"
+            >−</button>
+            <span class="qty__val">{{ item.quantity }}</span>
+            <button
+              class="qty__btn"
+              [disabled]="item.quantity >= item.stockAvailable"
+              (click)="increaseQty(item)"
+            >+</button>
+          </div>
+
+          <!-- Subtotal -->
+          <span class="cart-item__subtotal">{{ item.subtotal | number:'1.2-2' }} lei</span>
+
+          <!-- Șterge -->
+          <button class="cart-item__remove" (click)="removeItem(item)" title="Șterge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6l-1 14H6L5 6"/>
+              <path d="M10 11v6M14 11v6"/>
+              <path d="M9 6V4h6v2"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Footer lista -->
+      <div class="cart-items__footer">
+        <button class="btn btn--ghost-danger" (click)="clearCart()">
+          🗑 Golește coșul
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ── Coloana dreapta: sumar ── -->
+    <aside class="cart-summary">
+      <h2 class="cart-summary__title">Sumar comandă</h2>
+
+      <div class="cart-summary__lines">
+        <div class="summary-line" *ngFor="let item of cart.items">
+          <span class="summary-line__name">
+            {{ item.name }} <em>× {{ item.quantity }}</em>
+          </span>
+          <span class="summary-line__price">{{ item.subtotal | number:'1.2-2' }} lei</span>
+        </div>
+      </div>
+
+      <div class="cart-summary__divider"></div>
+
+      <div class="cart-summary__row">
+        <span>Subtotal</span>
+        <span>{{ cart.total | number:'1.2-2' }} lei</span>
+      </div>
+      <div class="cart-summary__row">
+        <span>Transport</span>
+        <span class="free">Gratuit</span>
+      </div>
+
+      <div class="cart-summary__divider"></div>
+
+      <div class="cart-summary__row cart-summary__row--total">
+        <span>Total</span>
+        <span>{{ cart.total | number:'1.2-2' }} lei</span>
+      </div>
+
+      <button class="btn btn--checkout" (click)="checkout()">
+        💳 Finalizează comanda
+      </button>
+    </aside>
+
+  </div>
+</div>
+</div>

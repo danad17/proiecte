@@ -1,0 +1,93 @@
+<div class="parent">
+  <div class="form-container">
+    <form *ngIf="!isRegister" class="login-form">
+      <h3>Login Here</h3>
+      <div class="input-box">
+        <input
+          type="text"
+          [(ngModel)]="loginObj.userName"
+          id="username"
+          name="username"
+          required
+        />
+        <label for="username">Username</label>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="password"
+          [(ngModel)]="loginObj.password"
+          id="password"
+          name="password"
+          required
+        />
+        <label for="password">Password</label>
+      </div>
+
+      <button class="btn" (click)="login()">Log In</button>
+      <div class="forgot-pass">
+        <a (click)="isRegister = !isRegister">Register</a>
+      </div>
+    </form>
+
+    <form *ngIf="isRegister" class="login-form">
+      <h3>Register Here</h3>
+      <div class="input-box">
+        <input
+          type="text"
+          [(ngModel)]="registerObj.userName"
+          id="reg-firstname"
+          name="reg-firstname"
+          required
+        />
+        <label for="reg-firstName">First Name</label>
+      </div>
+      <div class="input-box">
+        <input
+          type="text"
+          [(ngModel)]="registerObj.firstName"
+          id="reg-lastname"
+          name="reg-lastname"
+          required
+        />
+        <label for="reg-username">Last Name</label>
+      </div>
+      <div class="input-box">
+        <input
+          type="text"
+          [(ngModel)]="registerObj.email"
+          id="reg-email"
+          name="reg-email"
+          required
+        />
+        <label for="reg-username">Email</label>
+      </div>
+      <div class="input-box">
+        <input
+          type="text"
+          [(ngModel)]="registerObj.lastName"
+          id="reg-username"
+          name="reg-username"
+          required
+        />
+        <label for="reg-username">Username</label>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="password"
+          [(ngModel)]="registerObj.password"
+          id="reg-password"
+          name="reg-password"
+          required
+        />
+        <label for="reg-password">Password</label>
+      </div>
+
+      <button class="btn" (click)="register()">Register</button>
+      <div class="forgot-pass">
+        <a (click)="isRegister = !isRegister">Log In</a>
+      </div>
+    </form>
+  </div>
+</div>

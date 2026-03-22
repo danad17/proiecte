@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <div *ngIf="books && books.length > 0">
+      <div *ngFor="let book of books">
+        <div class="page-container">
+          <img [src]="book.picture_Url" class="imag" />
+          <h1 class="fw-bold-title">{{ book.name }}</h1>
+          <h1 class="fw-bold-author">de {{ book.author }}</h1>
+
+          <h4 class="descriptor">O scurta descriere a cartii:</h4>
+          <p class="desc">{{ book.description }}</p>
+          <div class="embedded-page">
+            <iframe [src]="book.pdf_Url | safeResourceUrl"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

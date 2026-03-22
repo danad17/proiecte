@@ -1,0 +1,33 @@
+.top-list ul {
+  list-style: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-group {
+  border: solid 1px;
+  margin: 10px 30px;
+}
+.bottom-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  list-style-type: none;
+}
+
+.fw-bold {
+  margin: auto 44px;
+  cursor: pointer;
+}
+
+body {
+  padding-top: 8%;
+}
+h1 {
+  text-align: center;
+}
+
+.cont {
+  margin: 0 54px;
+}
