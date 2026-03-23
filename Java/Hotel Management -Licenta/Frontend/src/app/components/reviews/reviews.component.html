@@ -1,0 +1,50 @@
+<body>
+<div class="review-section">
+  <div class="review-form">
+    <h3>Leave a review</h3>
+
+    <label for="roomSelect">Reservation:</label>
+    <select id="roomSelect" [(ngModel)]="selectedReservationId">
+      <option [ngValue]="null" disabled selected>Select a reservation</option>
+      <option *ngFor="let res of reservations" [value]="res.id">
+        Reservation: {{ res.dataCheckIn }} – {{ res.dataCheckOut }}
+      </option>
+    </select>
+
+    <label for="ratingSelect">Rating:</label>
+    <select id="ratingSelect" [(ngModel)]="newReview.rating">
+      <option *ngFor="let r of [1,2,3,4,5]" [value]="r">{{ r }}</option>
+    </select>
+
+    <label for="commentArea">Your thoughts about the stay:</label>
+    <textarea id="commentArea" [(ngModel)]="newReview.comment" placeholder="Write about your stay"></textarea>
+
+    <button (click)="submitReview()" [disabled]="!selectedReservationId || !newReview.comment.trim()">Send</button>
+  </div>
+</div>
+
+<div class="container" *ngIf="role === 'ROLE_ADMIN'">
+  <h1>All Reviews</h1>
+
+  <div *ngFor="let r of reviews" class="review-card">
+    <div >
+    <div class="review-rating">
+      Rating: {{ r.rating }}/5
+    </div>
+    <div class="review-comment">
+      {{ r.comment }}
+    </div>
+    <div class="review-date">
+      Posted on: {{ r.createdAt | date:'yyyy-MM-dd HH:mm' }}
+    </div>
+    <div>
+      From user: {{ reservationsMap.get(r.reservationId)?.user?.email }}
+    </div>
+      <div>
+        On reservation: {{ reservationsMap.get(r.reservationId)?.id }}
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>

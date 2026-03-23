@@ -1,0 +1,107 @@
+<body>
+<div class="main-container">
+  <div class="reservation-container">
+    <h2>Confirm Reservation</h2>
+    <p><strong>Check-in:</strong> {{ reservation.dataCheckIn }}</p>
+    <p><strong>Check-out:</strong> {{ reservation.dataCheckOut }}</p>
+    <p><strong>Number Of People:</strong> {{ reservation.numberOfPeople }}</p>
+
+    <form (ngSubmit)="createReservation()">
+      <p><strong>Final Price: </strong>{{ getConvertedPrice(reservation.totalCost) | currency:getCurrency()}}</p>
+      <button class="confirm-btn" type="submit">Confirm</button>
+    </form>
+  </div>
+  <div>
+    <div class="payment-form-container">
+      <h2>Payment Details</h2>
+      <form #paymentForm="ngForm">
+
+        <div class="form-group">
+          <label for="name">Cardholder Name</label>
+          <input
+            type="text"
+            id="name"
+            required
+            [(ngModel)]="paymentData.cardholder"
+            name="cardholder"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input
+            type="text"
+            id="cardNumber"
+            maxlength="19"
+            required
+            [(ngModel)]="paymentData.cardNumber"
+            name="cardNumber"
+            class="form-control"
+            placeholder="1234 5678 9012 3456"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="expiry">Expiry Date</label>
+            <input
+              type="text"
+              id="expiry"
+              maxlength="5"
+              required
+              [(ngModel)]="paymentData.expiry"
+              name="expiry"
+              class="form-control"
+              placeholder="MM/YY"
+            />
+          </div>
+
+          <div class="form-group half">
+            <label for="cvv">CVV</label>
+            <input
+              type="password"
+              id="cvv"
+              maxlength="4"
+              required
+              [(ngModel)]="paymentData.cvv"
+              name="cvv"
+              class="form-control"
+              placeholder="***"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="services-panel">
+    <div class="service-card">
+      <img src="https://www.mashed.com/img/gallery/the-truth-about-hotel-breakfast-buffets/l-intro-1609346085.jpg" alt="breakfast">
+      <label>
+        <input type="checkbox" [(ngModel)]="reservation.meals" name="meals" (ngModelChange)="onExtrasChanged()" />
+        <h4>Breakfast - {{ getConvertedPrice(50) | currency:getCurrency()}}/Person</h4>
+      </label>
+    </div>
+
+    <div class="service-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7rHE7QnNpxxEiBZTWK907cZCXhWQJJTo4g&s" alt="spa">
+      <label>
+        <input type="checkbox" [(ngModel)]="reservation.spa" name="spa" (ngModelChange)="onExtrasChanged()" />
+        <h4>Spa and Wellness Services - {{ getConvertedPrice(100) | currency:getCurrency()}}/Room</h4>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showLoginPopup" class="modal-backdrop">
+  <div class="modal-content">
+    <h2>Authentication needed!</h2>
+    <p>You have to be logged in for this!</p>
+    <div class="modal-buttons">
+      <button (click)="redirectToLogin()">Login</button>
+      <button (click)="closePopup()">Cancel</button>
+    </div>
+  </div>
+</div>
+</body>

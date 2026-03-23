@@ -1,0 +1,82 @@
+<body>
+<h2 class="section-title">Check room availability</h2>
+
+<form [formGroup]="availabilityForm" (ngSubmit)="searchRooms()" class="availability-form">
+  <div class="form-group">
+    <label>Check-in date:</label>
+    <input type="date" formControlName="checkIn" [min]="today"/>
+  </div>
+
+  <div class="form-group">
+    <label>Check-out date:</label>
+    <input type="date" formControlName="checkOut" [min]="availabilityForm.get('checkIn')?.value || today"/>
+  </div>
+
+  <div class="form-group person-group" #personGroupRef>
+    <label>Guests:</label>
+    <input class="show-popup" readonly [value]="getPersonLabel()" (click)="showPopup()" />
+
+    <div *ngIf="showPopUp" class="person-dropdown">
+      <div class="counter-group">
+        <label>Adults:</label>
+        <button (click)="decrease('adults')">−</button>
+        <span>{{ numberOfAdults }}</span>
+        <button (click)="increase('adults')">+</button>
+      </div>
+
+      <div class="counter-group">
+        <label>Children:</label>
+        <button (click)="decrease('children')">−</button>
+        <span>{{ numberOfChildren }}</span>
+        <button (click)="increase('children')">+</button>
+      </div>
+    </div>
+  </div>
+
+
+  <button type="submit" [disabled]="availabilityForm.invalid || loading" class="search-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20"><path fill="currentColor" d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33l-1.42 1.42l-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>
+  </button>
+  <div *ngIf="availabilityForm.errors?.['invalidDateRange'] && submitted" style="color: red;" >
+    Check-out date cannot be before check-in date.
+  </div>
+</form>
+
+<!-- Loading -->
+<div *ngIf="loading" class="loading-msg">
+  🔄 Searching for available rooms...
+</div>
+
+
+<div *ngIf="errorMessage" class="error-msg">
+  ⚠️ {{ errorMessage }}
+</div>
+
+<div *ngIf="rooms.length > 0">
+  <div class="card">
+    <h2 style="text-align: center;">Available Rooms</h2>
+    <div class="room-container" *ngFor="let room of rooms">
+      <img
+        [src]="room.imageUrls[0]"
+        alt="Room Image"
+        class="slider-image"
+      />
+      <div class="room-card" >
+        <p><strong>Room: </strong> {{ room.number }}</p>
+        <p><strong>Type: </strong> {{ room.type }}</p>
+        <p><strong>Description: </strong> {{ room.description }}</p>
+        <p><strong>Price:</strong> {{ getConvertedPrice(room.pricePerNight) | currency:getCurrency()}}</p>
+        <p><strong>Max Capacity: </strong> {{ room.capacity }} </p>
+        <div class="buttons">
+          <button [routerLink]="['/room-details', room.id]">Room Details!</button>
+          <button (click)="selectRoom(room)">Make this reservation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="submitted && !loading && rooms.length === 0" class="no-rooms">
+  No available rooms for the selected period!
+</div>
+</body>

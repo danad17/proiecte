@@ -1,0 +1,75 @@
+.room-form {
+  max-width: 500px;
+  margin: 70px auto 0 auto;
+  padding: 20px 30px;
+  background-color: rgba(197, 193, 193, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4e5052;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #404244;
+}
+
+@media (max-width: 768px) {
+  .room-form {
+    padding: 20px 25px;
+    margin-top: 50px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 500px) {
+  .room-form {
+    padding: 15px 20px;
+    margin-top: 40px;
+    width: 90%;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  input[type="number"],
+  input[type="text"],
+  select {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

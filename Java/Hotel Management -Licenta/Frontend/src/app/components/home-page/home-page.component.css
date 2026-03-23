@@ -1,0 +1,159 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.homepage-container {
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.welcome-card {
+  background: rgba(255, 255, 255, 0.71);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  margin: 50px auto;
+  max-width: 900px;
+}
+body {
+  background-image: url("https://i.redd.it/dr5cbbya3md01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.welcome-title {
+  font-size: 2.5em;
+  color: #24303c;
+  margin-bottom: 10px;
+}
+
+.welcome-subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.71);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: #24303c;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.feature-card button {
+  background-color: rgba(43, 58, 73, 0.6);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.feature-card button:hover {
+  background-color: rgba(56, 80, 101, 0.93);
+}
+
+.review{
+  position: fixed;
+  bottom: 3%;
+  left: 2%;
+  padding: 10px;
+  border: #3b4a59 2px solid;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.71);
+  cursor: pointer;
+}
+
+@media (max-width: 972px) {
+  .homepage-container {
+    padding-top: 30px;
+  }
+  .welcome-title {
+    font-size: 1.5em;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.95em;
+  }
+
+  .feature-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .features {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    margin-top: 30px;
+  }
+  .welcome-title {
+    font-size: 1.5em;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.95em;
+  }
+
+  .feature-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .features {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-container {
+    margin-top: 30px;
+  }
+  .welcome-title {
+    font-size: 1.5em;
+  }
+
+  .welcome-subtitle {
+    font-size: 0.95em;
+  }
+
+  .feature-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .features {
+    gap: 20px;
+  }
+}

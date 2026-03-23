@@ -1,0 +1,27 @@
+<body>
+<div>
+<app-availability></app-availability>
+</div>
+
+<div class="card">
+  <h2 style="text-align: center;">Rooms List</h2>
+  <div class="room-container" *ngFor="let room of rooms">
+    <img
+      [src]="room.imageUrls[0]"
+      alt="Room Image"
+      class="slider-image"
+    />
+    <div class="room-card" >
+      <p><strong>Room: </strong> {{ room.number }}</p>
+      <p><strong>Type: </strong> {{ room.type }}</p>
+      <p><strong>Description: </strong> {{ room.description }}</p>
+      <p><strong>Price:</strong> {{ getConvertedPrice(room.pricePerNight) | currency:getCurrency()}}</p>
+      <p><strong>Max Capacity: </strong> {{ room.capacity }} </p>
+      <div class="buttons">
+        <button [routerLink]="['/room-details', room.id]">Room Details!</button>
+        <button *ngIf="role === 'ROLE_ADMIN'" (click)="deleteRoom(room.id)">🗑️ Delete!</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
