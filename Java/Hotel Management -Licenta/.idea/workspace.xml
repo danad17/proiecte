@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9c28e6dd-c6a8-4def-a831-672ac799974e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/services/services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/services/services.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="com.intellij.jpb.JpaLiquibaseChangeLog" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Frontend" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2xmfqNoonVnL0ByiXNaVUU3HZ9e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.RestaurantControllerTest.createRestaurantTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RestaurantControllerTest.deleteRestaurantTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoleEnumTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoleEnumTest.testInvalidRoleThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoleEnumTest.testRoleEnumValues.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.HotelManagementApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/OneDrive/Desktop/Hotel Management -Licenta&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.54137933&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.liquibase.common.gui.settings.db.DiffChangesConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\david\\OneDrive\\Desktop\\Hotel Management -Licenta\\Frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\Desktop\Hotel Management -Licenta\Frontend\public" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="project.user" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HotelManagementApplication">
+    <configuration name="RestaurantControllerTest.createRestaurantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotelmanagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controller" />
+      <option name="MAIN_CLASS_NAME" value="project.controller.RestaurantControllerTest" />
+      <option name="METHOD_NAME" value="createRestaurantTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestaurantControllerTest.deleteRestaurantTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotelmanagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project.controller" />
+      <option name="MAIN_CLASS_NAME" value="project.controller.RestaurantControllerTest" />
+      <option name="METHOD_NAME" value="deleteRestaurantTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleEnumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotelmanagement" />
+      <option name="PACKAGE_NAME" value="project.user" />
+      <option name="MAIN_CLASS_NAME" value="project.user.RoleEnumTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleEnumTest.testInvalidRoleThrowsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotelmanagement" />
+      <option name="PACKAGE_NAME" value="project.user" />
+      <option name="MAIN_CLASS_NAME" value="project.user.RoleEnumTest" />
+      <option name="METHOD_NAME" value="testInvalidRoleThrowsException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleEnumTest.testRoleEnumValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hotelmanagement" />
+      <option name="PACKAGE_NAME" value="project.user" />
+      <option name="MAIN_CLASS_NAME" value="project.user.RoleEnumTest" />
+      <option name="METHOD_NAME" value="testRoleEnumValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="hotelmanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="project.HotelManagementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RestaurantControllerTest.createRestaurantTest" />
+        <item itemvalue="JUnit.RestaurantControllerTest.deleteRestaurantTest" />
+        <item itemvalue="JUnit.RoleEnumTest.testInvalidRoleThrowsException" />
+        <item itemvalue="JUnit.RoleEnumTest.testRoleEnumValues" />
+        <item itemvalue="JUnit.RoleEnumTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c28e6dd-c6a8-4def-a831-672ac799974e" name="Changes" comment="" />
+      <created>1748548359686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748548359686</updated>
+      <workItem from="1748548361003" duration="3713000" />
+      <workItem from="1748553319701" duration="5653000" />
+      <workItem from="1748597793954" duration="11579000" />
+      <workItem from="1748784548292" duration="39557000" />
+      <workItem from="1749488015719" duration="6603000" />
+      <workItem from="1749497983625" duration="5066000" />
+      <workItem from="1749636986179" duration="9246000" />
+      <workItem from="1749809850857" duration="19432000" />
+      <workItem from="1750176714830" duration="75291000" />
+      <workItem from="1750602685872" duration="39385000" />
+      <workItem from="1750706488304" duration="53327000" />
+      <workItem from="1750971227454" duration="1220000" />
+      <workItem from="1751018129591" duration="19674000" />
+      <workItem from="1751101155011" duration="84582000" />
+      <workItem from="1752165447135" duration="738000" />
+      <workItem from="1752166205949" duration="767000" />
+      <workItem from="1752166998758" duration="9789000" />
+      <workItem from="1752230363405" duration="6813000" />
+      <workItem from="1752252666042" duration="4657000" />
+      <workItem from="1752276304759" duration="12407000" />
+      <workItem from="1752418541368" duration="25929000" />
+      <workItem from="1763473148399" duration="8787000" />
+      <workItem from="1766044677179" duration="59000" />
+      <workItem from="1772538383926" duration="3743000" />
+      <workItem from="1772987963015" duration="4826000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
